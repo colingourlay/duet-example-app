@@ -1,6 +1,6 @@
 {
   "name": "duet-example-app",
-  "description": "Duet Example",
+  "description": "duet example",
   "version": "1.0.0",
   "author": {
     "name": "Colin Gourlay",
@@ -17,8 +17,8 @@
   "private": true,
   "scripts": {
     "server": "static public -p 8000",
-    "build": "duet --title='Duet Example'",
-    "build-dev": "duet --debug --title='Duet Example [dev]'",
+    "build": "duet --title='duet example'",
+    "build-dev": "duet --debug --title='duet example [dev]'",
     "watch": "gazer -p 'src/**/*' npm run build-dev &",
     "dev": "npm run build-dev && npm run watch && npm run server",
     "start": "npm install && npm run dev"
