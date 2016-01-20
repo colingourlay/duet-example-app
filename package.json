@@ -1,0 +1,26 @@
+{
+  "name": "duet-example-app",
+  "description": "Duet Example",
+  "version": "1.0.0",
+  "author": {
+    "name": "Colin Gourlay",
+    "email": "colin@colin-gourlay.com",
+    "url": "http://colin-gourlay.com"
+  },
+  "dependencies": {
+    "duet": "^1.0.0"
+  },
+  "devDependencies": {
+    "gazer": "0.0.3",
+    "node-static": "~0.7.6"
+  },
+  "private": true,
+  "scripts": {
+    "server": "static public -p 8000",
+    "build": "duet --title='Duet Example'",
+    "build-dev": "duet --debug --title='Duet Example [dev]'",
+    "watch": "gazer -p 'src/**/*' npm run build-dev &",
+    "dev": "npm run build-dev && npm run watch && npm run server",
+    "start": "npm install && npm run dev"
+  }
+}
