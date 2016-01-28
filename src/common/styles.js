@@ -1,7 +1,7 @@
-import {css} from 'duet';
-import variables from './variables';
+const {css}     = require('duet');
+const variables = require('./variables');
 
-export default css`
+module.exports = css`
 
     .button {
         box-sizing: border-box;

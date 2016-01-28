@@ -1,20 +1,21 @@
-import {model, value, dom} from 'duet';
-import Counter from './Counter';
+require('./styles');
+const {model, value, dom} = require('duet');
+const Counter             = require('./Counter');
 
-export default function app(start) {
+module.exports = (start) => {
 
-    function appView(state) {
-        return dom`
-            <div>
-                <h1>Duet Example</h1>
-                ${Counter(state)}
-            </div>
-        `;
-    }
+    start(
+        (state) => {
+            return dom`
+                <div>
+                    <h1>Duet Example</h1>
+                    ${Counter(state)}
+                </div>
+            `;
+        },
+        model({
+            count: value(0)
+        })
+    );
 
-    const appModel = model({
-        count: value(0)
-    });
-
-    start(appView, appModel);
 };

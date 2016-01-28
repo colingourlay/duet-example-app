@@ -1,6 +1,5 @@
-import './styles';
-import duet from 'duet';
-import app from './app';
+const duet = require('duet');
+const app  = require('./app');
 
 duet(app, 'body', {
     // forceSingleThread: true,

@@ -1,13 +1,13 @@
-import {domFor, modelFor} from 'duet';
-import styles from './styles';
+const {domFor, modelFor} = require('duet');
+const styles             = require('./styles');
 
 const dom = domFor(styles);
 
-function add(model, data) {
+const add = (model, data) => {
     model.count.set(model.count() + parseInt(data, 10));
 }
 
-export default function Counter(state) {
+module.exports = (state) => {
     const model = modelFor(state);
     const digits = String(Math.abs(state.count)).length;
 

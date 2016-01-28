@@ -1,6 +1,6 @@
-import {css} from 'duet';
+const {css} = require('duet');
 
-export default css`
+module.exports = css`
 
     body {
         margin: 0;

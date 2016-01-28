@@ -1,8 +1,8 @@
-import {css} from 'duet';
-import styles from '../common/styles';
-import variables from '../common/variables';
+const {css}     = require('duet');
+const styles    = require('../common/styles');
+const variables = require('../common/variables');
 
-export default css`
+module.exports = css`
 
     .root {
         width: 100%;
