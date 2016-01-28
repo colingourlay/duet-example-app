@@ -8,7 +8,7 @@
     "url": "http://colin-gourlay.com"
   },
   "dependencies": {
-    "duet": "git+https://git@github.com/colingourlay/duet.git#1.0.1"
+    "duet": "1.1.0"
   },
   "devDependencies": {
     "gazer": "0.0.3",
