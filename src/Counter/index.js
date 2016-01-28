@@ -4,7 +4,7 @@ const styles             = require('./styles');
 const dom = domFor(styles);
 
 const add = (model, data) => {
-    model.count.set(model.count() + parseInt(data, 10));
+    model.count.set(model.count() + parseInt(data.custom, 10));
 }
 
 module.exports = (state) => {
