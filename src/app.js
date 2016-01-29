@@ -1,21 +1,9 @@
-require('./styles');
-const {model, value, dom} = require('duet');
-const Counter             = require('./Counter');
+const {localStorage} = require('duet');
+const model = require('./model');
+const view = require('./view');
 
 module.exports = (start) => {
-
-    start(
-        (state) => {
-            return dom`
-                <div>
-                    <h1>Duet Example</h1>
-                    ${Counter(state)}
-                </div>
-            `;
-        },
-        model({
-            count: value(0)
-        })
-    );
-
+    localStorage('count', function (initialState) {
+        start(view, model(initialState));
+    });
 };
