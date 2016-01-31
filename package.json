@@ -8,7 +8,7 @@
     "url": "http://colin-gourlay.com"
   },
   "dependencies": {
-    "duet": "1.5.0"
+    "duet": "1.6.0"
   },
   "devDependencies": {
     "gazer": "0.0.3",
