@@ -8,7 +8,7 @@
     "url": "http://colin-gourlay.com"
   },
   "dependencies": {
-    "duet": "^1.7.0"
+    "duet": "^1.8.0"
   },
   "devDependencies": {
     "gazer": "0.0.3",
@@ -19,7 +19,7 @@
     "server": "static public -p 8000",
     "build": "duet --title='duet example'",
     "build-dev": "duet --debug --title='duet example [dev]'",
-    "watch": "gazer -p 'src/**/*' npm run build-dev &",
+    "watch": "gazer -p 'src/**/*' npm run build-dev & gazer -p 'node_modules/duet/lib/**/*' npm run build-dev &",
     "dev": "npm run build-dev && npm run watch && npm run server",
     "start": "npm install && npm run dev"
   }

@@ -16,10 +16,10 @@ module.exports = (state) => {
             <div styleName=${digits > 4 ? 'hugeCount' : digits > 3 ? 'bigCount' : 'count'}>
                 ${state.count}
             </div>
-            <button.decrement data-click=${model.ev(add, -10)}>-10</button>
-            <button.decrement data-click=${model.ev(add, -1)}>-1</button>
-            <button.increment data-click=${model.ev(add, 1)}>1</button>
-            <button.increment data-click=${model.ev(add, 10)}>10</button>
+            <button.decrement dataset=${{click: model.ev(add, -10)}}>-10</button>
+            <button.decrement dataset=${{click: model.ev(add, -1)}}>-1</button>
+            <button.increment dataset=${{click: model.ev(add, 1)}}>1</button>
+            <button.increment dataset=${{click: model.ev(add, 10)}}>10</button>
         </div>
     `;
 }
