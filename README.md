@@ -40,12 +40,12 @@ In browsers that don't support web workers, the worker thread and API is mocked,
 3. Open your browser's developer console and watch the messages fly.
 
     * Messages prefixed with `APP::` come from the **app** (worker) thread. All of your app code runs inside this worker. These messages are:
-        * `APP::PATCH`: A patch for the DOM, resulting from the creation of a new virtual DOM that es made every time you update the app's state.
+        * `APP::DOM_PATCH`: A patch for the DOM, resulting from the creation of a new virtual DOM that es made every time you update the app's state.
         * `APP::CSS`: A block of CSS, resulting from the import of a CSS module. These blocks will be written as separate stylesheets in the `document.head`.
         * `APP::LOCAL_STORAGE`: A key to be read from localStorage, with reference to an async handler for the value, or a key & value to be written.
     * Messages prefixed with `USER::` come from the **user** (main) thread (which has access to the UI and document API). None of your app code runs here.
         * `USER::READY`: The app's container element exists, and is ready to start recieving patches.
-        * `USER::EVENT`: A DOM event which corresponds to an event handler created while rendering your app's virtual DOM. If the element is a control, its value will also be passed through.
+        * `USER::DOM_EVENT`: A DOM event which corresponds to an event handler created while rendering your app's virtual DOM. If the element is a control, its value will also be passed through.
         * `USER::LOCAL_STORAGE`: A value which has been read, along with the async handler reference.
 
 
