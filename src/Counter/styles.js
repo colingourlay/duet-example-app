@@ -30,16 +30,12 @@ module.exports = css`
         width: 60px;
     }
 
-    /* [1] */
-    .decrement extends .button, ${styles.button} {
+    .decrement extends .button {
         background-color: ${variables.red};
     }
 
-    /* [1] */
-    .increment extends .button, ${styles.button} {
+    .increment extends .button {
         background-color: ${variables.green};
     }
 
 `;
-
- // [1] csjs bug: extending .button should be sufficient
