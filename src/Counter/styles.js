@@ -1,4 +1,4 @@
-const {css}     = require('duet');
+const {css}     = require('duet/bridges/csjs');
 const styles    = require('../common/styles');
 const variables = require('../common/variables');
 

@@ -1,9 +1,9 @@
-const {localStorage} = require('duet');
+const {getItem} = require('duet/bridges/local-storage');
 const model = require('./model');
 const view = require('./view');
 
 module.exports = (start) => {
-    localStorage('count', function (initialState) {
+    getItem('count', function (initialState) {
         start(view, model(initialState));
     });
 };

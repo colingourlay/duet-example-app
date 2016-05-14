@@ -1,4 +1,4 @@
-const {css}     = require('duet');
+const {css}     = require('duet/bridges/csjs');
 const variables = require('./variables');
 
 module.exports = css`
