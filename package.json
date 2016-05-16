@@ -1,14 +1,14 @@
 {
   "name": "duet-example-app",
   "description": "duet example",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "author": {
     "name": "Colin Gourlay",
     "email": "colin@colin-gourlay.com",
     "url": "http://colin-gourlay.com"
   },
   "dependencies": {
-    "duet": "^2.1.1"
+    "duet": "^2.2.0"
   },
   "devDependencies": {
     "gazer": "0.0.3",
