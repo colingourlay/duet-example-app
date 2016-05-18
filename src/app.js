@@ -1,9 +1,13 @@
-const {getItem} = require('duet/bridges/local-storage');
-const model = require('./model');
+const storage = require('duet/bridges/local-storage');
+const vdom = require('duet/bridges/virtual-dom');
+const createModel = require('./model');
 const view = require('./view');
 
-module.exports = (start) => {
-    getItem('count', function (initialState) {
-        start(view, model(initialState));
+module.exports = () => {
+    storage('count', (initialState) => {
+        const model = createModel(initialState);
+        const update = vdom('body', view(model()));
+
+        model((state) => update(view(state)));
     });
 };

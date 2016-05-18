@@ -1,7 +1,8 @@
-const {domFor, modelFor} = require('duet');
-const styles             = require('./styles');
+const {modelFor} = require('duet/util/model');
+const styledDom  = require('duet/util/dom').styled;
+const styles     = require('./styles');
 
-const dom = domFor(styles);
+const dom = styledDom(styles);
 
 const add = (model, data) => {
     model.count.set(model.count() + parseInt(data.custom, 10));

@@ -1,11 +1,12 @@
-const duet = require('duet');
-const app  = require('./app');
+const duet    = require('duet');
+const csjs    = require('duet/bridges/csjs');
+const storage = require('duet/bridges/local-storage');
+const vdom    = require('duet/bridges/virtual-dom');
+const app     = require('./app');
 
-duet(app, 'body', {
-    bridges: [
-        require('duet/bridges/csjs'),
-        require('duet/bridges/local-storage')
-    ],
+const options = {
     // forceSingleThread: true,
     isDebug: true
-});
+};
+
+duet([csjs, storage, vdom], app, options);

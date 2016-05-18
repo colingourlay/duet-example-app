@@ -1,5 +1,5 @@
 require('./styles');
-const {dom}   = require('duet');
+const dom = require('duet/util/dom');
 const Counter = require('./Counter');
 
 module.exports = (state) => {
