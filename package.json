@@ -8,7 +8,10 @@
     "url": "http://colin-gourlay.com"
   },
   "dependencies": {
-    "duet": "^3.0.0"
+    "duet": "^3.1.0",
+    "hyperx": "^2.0.3",
+    "send-action": "^1.1.0",
+    "virtual-dom": "^2.1.1"
   },
   "devDependencies": {
     "gazer": "0.0.3",

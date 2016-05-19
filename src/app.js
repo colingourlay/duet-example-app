@@ -1,13 +1,36 @@
+const sendAction = require('send-action');
 const storage = require('duet/bridges/local-storage');
 const vdom = require('duet/bridges/virtual-dom');
-const createModel = require('./model');
 const view = require('./view');
 
 module.exports = () => {
-    storage('count', (initialState) => {
-        const model = createModel(initialState);
-        const update = vdom('body', view(model()));
+    const update = vdom('body');
 
-        model((state) => update(view(state)));
+    const send = sendAction({
+        onaction: (params, state) => {
+            switch (params.type) {
+                case 'set':
+                    state.count = params.value;
+                    break;
+                case 'add':
+                    state.count += params.value;
+                    break;
+                default:
+                    break;
+            }
+
+            return state;
+        },
+        onchange: (params, state) => {
+            update(view(state, send));
+            storage('count', state.count);
+        },
+        state: {
+            count: 0
+        }
+    });
+
+    storage('count', (count) => {
+        send('set', {value: +count});
     });
 };

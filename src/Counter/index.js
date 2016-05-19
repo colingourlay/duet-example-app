@@ -1,26 +1,17 @@
-const {modelFor} = require('duet/util/model');
-const styledDom  = require('duet/util/dom').styled;
-const styles     = require('./styles');
+const dom    = require('../common/dom');
+const styles = require('./styles');
 
-const dom = styledDom(styles);
-
-const add = (model, data) => {
-    model.count.set(model.count() + parseInt(data.custom, 10));
-}
-
-module.exports = (state) => {
-    const model = modelFor(state);
-    const digits = String(Math.abs(state.count)).length;
+module.exports = (state, send) => {
+    const chars = String(Math.abs(state.count)).length;
+    const countClass = chars > 4 ? 'hugeCount' : chars > 3 ? 'bigCount' : 'count';
 
     return dom`
-        <div.root>
-            <div styleName=${digits > 4 ? 'hugeCount' : digits > 3 ? 'bigCount' : 'count'}>
-                ${state.count}
-            </div>
-            <button.decrement dataset=${{click: model.ev(add, -10)}}>-10</button>
-            <button.decrement dataset=${{click: model.ev(add, -1)}}>-1</button>
-            <button.increment dataset=${{click: model.ev(add, 1)}}>1</button>
-            <button.increment dataset=${{click: model.ev(add, 10)}}>10</button>
+        <div class="${styles.root}">
+            <div class="${styles[countClass]}">${state.count}</div>
+            <button class="${styles.decrement}" dataset=${{click: send.event('add', {value: -10})}}>-10</button>
+            <button class="${styles.decrement}" dataset=${{click: send.event('add', {value: -1})}}>-1</button>
+            <button class="${styles.increment}" dataset=${{click: send.event('add', {value: 1})}}>1</button>
+            <button class="${styles.increment}" dataset=${{click: send.event('add', {value: 10})}}>10</button>
         </div>
     `;
 }
