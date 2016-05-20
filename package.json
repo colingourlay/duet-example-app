@@ -1,14 +1,14 @@
 {
   "name": "duet-example-app",
   "description": "duet example",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "author": {
     "name": "Colin Gourlay",
     "email": "colin@colin-gourlay.com",
     "url": "http://colin-gourlay.com"
   },
   "dependencies": {
-    "duet": "^3.1.0",
+    "duet": "^3.2.0",
     "hyperx": "^2.0.3",
     "send-action": "^1.1.0",
     "virtual-dom": "^2.1.1"
