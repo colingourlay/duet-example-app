@@ -1,7 +1,7 @@
 const sendAction = require('send-action');
-const storage = require('duet/bridges/local-storage');
-const vdom = require('duet/bridges/virtual-dom');
-const view = require('./view');
+const storage    = require('duet-local-storage');
+const vdom       = require('duet-virtual-dom');
+const view       = require('./view');
 
 module.exports = () => {
     const update = vdom('body');

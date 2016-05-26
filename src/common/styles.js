@@ -1,7 +1,7 @@
-const {css}     = require('duet/bridges/csjs');
+const csjs      = require('duet-csjs');
 const variables = require('./variables');
 
-module.exports = css`
+module.exports = csjs`
 
     .button {
         box-sizing: border-box;

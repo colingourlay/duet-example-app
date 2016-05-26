@@ -8,20 +8,25 @@
     "url": "http://colin-gourlay.com"
   },
   "dependencies": {
-    "duet": "^3.2.0",
+    "console": "^0.5.2",
+    "duet": "^4.0.1",
+    "duet-csjs": "^1.0.0",
+    "duet-local-storage": "^1.0.0",
+    "duet-virtual-dom": "^1.0.0",
     "hyperx": "^2.0.3",
     "send-action": "^1.1.0",
     "virtual-dom": "^2.1.1"
   },
   "devDependencies": {
+    "duet-build": "^1.0.0",
     "gazer": "0.0.3",
     "node-static": "~0.7.6"
   },
   "private": true,
   "scripts": {
     "server": "static public -p 8000",
-    "build": "duet --title='duet example'",
-    "build-dev": "duet --debug --title='duet example [dev]'",
+    "build": "duet-build --title='duet example'",
+    "build-dev": "duet-build --debug --title='duet example [dev]'",
     "watch": "gazer -p 'src/**/*' npm run build-dev & gazer -p 'node_modules/duet/lib/**/*' npm run build-dev &",
     "dev": "npm run build-dev && npm run watch && npm run server",
     "start": "npm install && npm run dev"

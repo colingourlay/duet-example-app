@@ -1,6 +1,6 @@
-const {css} = require('duet/bridges/csjs');
+const csjs = require('duet-csjs');
 
-module.exports = css`
+module.exports = csjs`
 
     body {
         margin: 0;

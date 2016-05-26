@@ -1,8 +1,8 @@
-const {css}     = require('duet/bridges/csjs');
+const csjs      = require('duet-csjs');
 const styles    = require('../common/styles');
 const variables = require('../common/variables');
 
-module.exports = css`
+module.exports = csjs`
 
     .root {
         width: 100%;
