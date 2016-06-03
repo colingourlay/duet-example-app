@@ -11,7 +11,7 @@
     "console": "^0.5.2",
     "duet": "^4.0.1",
     "duet-csjs": "^1.0.0",
-    "duet-local-storage": "^1.0.0",
+    "duet-localforage": "^1.0.0",
     "duet-virtual-dom": "^1.0.0",
     "hyperx": "^2.0.3",
     "send-action": "^1.1.0",

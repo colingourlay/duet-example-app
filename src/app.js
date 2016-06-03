@@ -1,7 +1,7 @@
-const sendAction = require('send-action');
-const storage    = require('duet-local-storage');
-const vdom       = require('duet-virtual-dom');
-const view       = require('./view');
+const sendAction  = require('send-action');
+const localforage = require('duet-localforage');
+const vdom        = require('duet-virtual-dom');
+const view        = require('./view');
 
 module.exports = () => {
     const update = vdom('body');
@@ -23,14 +23,14 @@ module.exports = () => {
         },
         onchange: (params, state) => {
             update(view(state, send));
-            storage('count', state.count);
+            localforage.setItem('count', state.count);
         },
         state: {
             count: 0
         }
     });
 
-    storage('count', (count) => {
-        send('set', {value: +count});
+    localforage.getItem('count').then((count) => {
+        send('set', {value: count == null ? 0 : count});
     });
 };
