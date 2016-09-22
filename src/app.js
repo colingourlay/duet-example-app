@@ -7,7 +7,9 @@ module.exports = () => {
     const update = vdom('body');
 
     const send = sendAction({
-        onaction: (params, state) => {
+        onaction: (params, currentState) => {
+            var state = Object.assign({}, currentState);
+
             switch (params.type) {
                 case 'set':
                     state.count = params.value;

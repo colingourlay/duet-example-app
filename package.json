@@ -12,9 +12,9 @@
     "duet": "^4.0.1",
     "duet-csjs": "^1.0.0",
     "duet-localforage": "^1.0.0",
-    "duet-virtual-dom": "^1.0.0",
+    "duet-virtual-dom": "^1.1.0",
     "hyperx": "^2.0.3",
-    "send-action": "^1.1.0",
+    "send-action": "^2.0.0",
     "virtual-dom": "^2.1.1"
   },
   "devDependencies": {
