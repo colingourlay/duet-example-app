@@ -1,4 +1,5 @@
 const sendAction  = require('send-action');
+const docTitle    = require('duet-document-title');
 const localforage = require('duet-localforage');
 const vdom        = require('duet-virtual-dom');
 const view        = require('./view');
@@ -25,6 +26,7 @@ module.exports = () => {
         },
         onchange: (params, state) => {
             update(view(state, send));
+            docTitle('duet example [' + state.count + ']');
             localforage.setItem('count', state.count);
         },
         state: {

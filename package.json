@@ -11,6 +11,7 @@
     "console": "^0.5.2",
     "duet": "^4.0.1",
     "duet-csjs": "^1.0.0",
+    "duet-document-title": "^1.0.0",
     "duet-localforage": "^1.0.0",
     "duet-virtual-dom": "^1.1.0",
     "hyperx": "^2.0.3",
@@ -26,7 +27,7 @@
   "scripts": {
     "server": "static public -p 8000",
     "build": "duet-build --title='duet example'",
-    "build-dev": "duet-build --debug --title='duet example [dev]'",
+    "build-dev": "duet-build --debug --title='duet example'",
     "watch": "gazer -p 'src/**/*' npm run build-dev & gazer -p 'node_modules/duet/lib/**/*' npm run build-dev &",
     "dev": "npm run build-dev && npm run watch && npm run server",
     "start": "npm install && npm run dev"
